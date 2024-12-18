@@ -177,3 +177,7 @@ dist
 # Node.js
 node_modules/
 dist/
+
+# prisma
+migrations/
+db/
