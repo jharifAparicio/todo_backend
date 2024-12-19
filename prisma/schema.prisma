@@ -7,25 +7,23 @@ datasource db {
   url      = "file:../db/dev.db"
 }
 
-model Users {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  avatar    String   @default("https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  tasks     Task[]
+model Usuarios {
+  id            Int      @id @default(autoincrement())
+  nombre        String
+  correo        String   @unique
+  contrasena    String
+  perfil        String   @default("https://res.cloudinary.com/dkgmldgwu/image/upload/v1734611036/fotos_perfil/wysgb8bofsube6sekut7.webp")
+  fechaCreacion DateTime @default(now())
+  tareas        Tareas[]
 }
 
-model Task {
+model Tareas {
   id          Int       @id @default(autoincrement())
-  title       String
-  content     String
-  status      String    @default("pending") // Estados: pending, in_progress, completed
-  createdAt   DateTime  @default(now())
-  FinalizedAt DateTime?
-  updatedAt   DateTime  @updatedAt
-  userId      Int
-  user        Users     @relation(fields: [userId], references: [id])
+  titulo      String
+  cintenido   String
+  stado       String    @default("pending") // Estados: pending, in_progress, completed
+  fechaCreado DateTime  @default(now())
+  fechaFinal  DateTime?
+  idUsuario   Int
+  usuario     Usuarios  @relation(fields: [idUsuario], references: [id])
 }

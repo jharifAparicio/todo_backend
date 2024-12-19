@@ -1,20 +1,23 @@
-export class Usuario {
+export class UsuarioModel {
     id?: number;
-    name: string;
-    email: string;
-    avatar: string;
-    password: string;
+    nombre: string;
+    correo: string;
+    perfil?: string;
+    contrasena: string;
+    fechaCreacion?: Date;
     constructor(
-        name: string,
-        email: string,
-        password: string,
-        avatar: string,
+        nombre: string,
+        correo: string,
+        contrasena: string,
+        perfil?: string,
+        fechaCreacion?: Date,
         id?: number
     ) {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.avatar = avatar;
-        this.password = password;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.perfil = perfil;
+        this.contrasena = contrasena;
+        this.fechaCreacion = fechaCreacion;
     }
 }

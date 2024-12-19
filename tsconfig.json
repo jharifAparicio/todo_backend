@@ -9,7 +9,15 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "@repositories/*": ["./src/repositories/*"],
+            "@services/*": ["./src/services/*"],
+            "@models/*": ["./src/models/*"],
+            "@controllers/*": ["./src/controllers/*"],
+            "@routes/*": ["./src/routes/*"]
+        }
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]

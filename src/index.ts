@@ -1,4 +1,5 @@
 import express from "express";
+import router from "@routes/AllRoutes";
 
 const app = express();
 
@@ -6,13 +7,12 @@ const app = express();
 app.use(express.json());
 
 // rutas
-app.get("/", (req, res) => {
-    res.send("Hello World");
-})
+app.use('/api', router);
 
 // iniciar el servidor
 const PORT = Bun.env.PORT;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`http://localhost:${PORT}/api`);
 });
