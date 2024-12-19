@@ -12,18 +12,20 @@ model Users {
   name      String
   email     String   @unique
   password  String
+  avatar    String   @default("https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   tasks     Task[]
 }
 
 model Task {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  status    String   @default("pending") // Estados: pending, in_progress, completed
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    Int
-  user      Users    @relation(fields: [userId], references: [id])
+  id          Int       @id @default(autoincrement())
+  title       String
+  content     String
+  status      String    @default("pending") // Estados: pending, in_progress, completed
+  createdAt   DateTime  @default(now())
+  FinalizedAt DateTime?
+  updatedAt   DateTime  @updatedAt
+  userId      Int
+  user        Users     @relation(fields: [userId], references: [id])
 }

@@ -11,6 +11,7 @@
     "@types/bun": "latest",
     "@types/cors": "2.8.17",
     "@types/express": "5.0.0",
+    "globals": "15.14.0",
     "prisma": "6.1.0"
   },
   "peerDependencies": {
