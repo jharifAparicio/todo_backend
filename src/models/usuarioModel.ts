@@ -1,4 +1,4 @@
-export class UsuarioModel {
+class UsuarioModel {
     id?: number;
     nombre: string;
     correo: string;
@@ -21,3 +21,5 @@ export class UsuarioModel {
         this.fechaCreacion = fechaCreacion;
     }
 }
+
+export default UsuarioModel;

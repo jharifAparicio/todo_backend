@@ -18,12 +18,12 @@ model Usuarios {
 }
 
 model Tareas {
-  id          Int       @id @default(autoincrement())
-  titulo      String
-  cintenido   String
-  stado       String    @default("pending") // Estados: pending, in_progress, completed
-  fechaCreado DateTime  @default(now())
-  fechaFinal  DateTime?
-  idUsuario   Int
-  usuario     Usuarios  @relation(fields: [idUsuario], references: [id])
+  id               Int       @id @default(autoincrement())
+  titulo           String
+  contenido        String
+  estado           String    @default("pendiente") // Estados: pediente, en progreso, completado
+  fechaCreado      DateTime  @default(now())
+  fechaVencimiento DateTime?
+  idUsuario        Int
+  usuario          Usuarios  @relation(fields: [idUsuario], references: [id])
 }

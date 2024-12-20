@@ -1,8 +1,8 @@
 import { Response, Request } from "express";
-import { usuarioService } from "@services/usuarioService";
-import { UsuarioModel } from "@models/usuarioModel";
+import usuarioService from "@services/usuarioService";
+import UsuarioModel from "@models/usuarioModel";
 
-export class usuarioController {
+class usuarioController {
     static async crearUsuario(req: Request, res: Response) {
         try {
             const usuario = req.body as UsuarioModel;
@@ -95,3 +95,5 @@ export class usuarioController {
         }
     }
 }
+
+export default usuarioController;

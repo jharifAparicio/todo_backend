@@ -1,9 +1,9 @@
 const bcrypt = require('bcryptjs');
 import jwt from "jsonwebtoken";
-import { usuarioRepository } from "@repositories/usuarioRepository";
-import { UsuarioModel } from "@models/usuarioModel";
+import usuarioRepository from "@repositories/usuarioRepository";
+import UsuarioModel from "@models/usuarioModel";
 
-export class usuarioService {
+class usuarioService {
     static async crearUsuario(usuario: UsuarioModel) {
 
         if (!usuario.nombre || !usuario.correo || !usuario.contrasena) {
@@ -76,3 +76,5 @@ function encriptarContrasena(contrasena: string): string {
     const salt = bcrypt.genSaltSync(10);
     return bcrypt.hashSync(contrasena, salt);
 }
+
+export default usuarioService;

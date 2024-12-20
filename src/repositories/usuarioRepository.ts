@@ -1,7 +1,7 @@
 import prisma from "../prisma/client";
-import { UsuarioModel } from "@models/usuarioModel";
+import UsuarioModel from "@models/usuarioModel";
 
-export class usuarioRepository {
+class usuarioRepository {
     static async crearUsuario(usuario: UsuarioModel): Promise<UsuarioModel> {
         const UsuarioCreado = await prisma.usuarios.create({
             data: {
@@ -56,3 +56,4 @@ export class usuarioRepository {
     }
 }
 
+export default usuarioRepository;
