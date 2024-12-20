@@ -181,3 +181,5 @@ dist/
 # prisma
 migrations/
 db/
+
+.vscode/
