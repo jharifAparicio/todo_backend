@@ -14,6 +14,8 @@ router.post("/login", usuarioController.login);
 
 // rutas de tareas
 router.post("/tarea", TareaController.crearTarea);
-router.get("/tarea/:id", TareaController.obtenerTareasPorIdUsuario);
+router.get("/tarea/:idUsuario", TareaController.obtenerTareasPorIdUsuario);
+router.put("/tarea/:id", TareaController.actualizarTarea);
+router.delete("/tarea/:id", TareaController.eliminarTarea);
 
 export default router;

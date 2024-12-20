@@ -25,6 +25,18 @@ class TareaService {
         const tareas = await TareaRepository.obtenerTareasPorIdUsuario(id);
         return tareas;
     }
+
+    static async actualizarTarea(tarea: TareaModel, idTarea: number) {
+        const tareaActualizada = await TareaRepository.updateTarea(tarea, idTarea);
+        return tareaActualizada;
+    }
+
+    static async eliminarTarea(id: number) {
+        const tareaEliminada = await TareaRepository.eliminarTarea(id);
+        return tareaEliminada;
+    }
 }
+// zona horaria bolivia
+// DD-MM-YYYYT20:00:00.000Z
 
 export default TareaService;

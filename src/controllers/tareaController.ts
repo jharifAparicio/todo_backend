@@ -20,11 +20,42 @@ class TareaController {
 
     static async obtenerTareasPorIdUsuario(req: Request, res: Response) {
         try {
-            const id = parseInt(req.params.id);
+            const id = parseInt(req.params.idUsuario);
             const tareas = await TareaService.obtenerTareasPorIdUsuario(id);
             res.status(200).json({
                 tareas: tareas,
                 'status': 200
+            });
+        } catch (error) {
+            res.status(400).json({
+                message: " " + error,
+            })
+        }
+    }
+
+    static async actualizarTarea(req: Request, res: Response) {
+        try {
+            const idTarea = parseInt(req.params.id);
+            const tarea = req.body as TareaModel;
+            const tareaActualizada = await TareaService.actualizarTarea(tarea, idTarea);
+            res.status(200).json({
+                tarea: tareaActualizada,
+                'status': 200
+            });
+        } catch (error) {
+            res.status(400).json({
+                message: " " + error,
+            })
+        }
+    }
+
+    static async eliminarTarea(req: Request, res: Response) {
+        try {
+            const idTarea = parseInt(req.params.id);
+            await TareaService.eliminarTarea(idTarea);
+            res.status(200).json({
+                message: "Tarea eliminada",
+                status: 200
             });
         } catch (error) {
             res.status(400).json({

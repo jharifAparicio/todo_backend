@@ -10,7 +10,7 @@ class TareaModel {
     constructor(
         titulo: string,
         contenido: string,
-        fechaCreacion: Date = new Date(),
+        fechaCreacion: Date = new Date(new Date().toUTCString()),
         fechaVencimiento: Date | null,
         idUsuario: number,
         estado?: string,
